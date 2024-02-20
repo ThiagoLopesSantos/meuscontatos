@@ -1,2 +1,2 @@
 # meuscontatos
-Projeto feito para a aula do curso.
+Projeto feito para a aula do curso EBAC.
