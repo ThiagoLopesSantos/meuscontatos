@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:cursive;
+}
+
+body {
+    background-color: #687881;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+}
+
+.container {
+    border: 1px solid #333;
+    background-color: #ffffff18;
+    box-shadow: 1px 1px 5px #000;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    gap: 20px;
+}
+
+header img {
+    height: 52px;
+}
+
+header h1 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    max-width: 900px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+form input {
+    font-size: 24px;
+    background-color: #41515a;
+    color: #687881;
+    border: none;
+    padding: 8px;   
+}
+#ddd {
+    width: 85px;
+}
+form input:focus {
+    outline:none;
+    box-shadow: 0px 0px 2px #00b13b;
+}
+form button{
+    background-color: #205a33;
+    color: #687881;
+    font-size: 24px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    width: 50px;
+}
+form button:hover{
+    background-color: #027929;
+    color: #fff;
+}
+
+table {
+    width: 100%;
+}
+
+table th {
+    border-bottom: 2px solid #000;
+    padding: 16px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+table td {
+    text-align: center;
+    font-size: 18px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+table td {
+    transition: all ease 1s;
+}
+
+tfoot button {
+    background-color: #af2631;
+    color: #687881;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+tfoot button:hover {
+    background-color: #ac424a;
+    color: #FFF;
+}
+
+#contador {
+    background-color: #41515a;
+    font-size: 24px;
+    color: #687881;
+}
+#title-contador {
+    font-weight: bold;
+}
+
+#rodape {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border: 2px solid #000;
+    margin-top: 10px;
+}
