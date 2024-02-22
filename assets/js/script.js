@@ -6,6 +6,7 @@ const telefones = [];
 let linhas = [];
 
 
+
 form.addEventListener('submit', function(e){
     e.preventDefault();
     adicionarLinha();
@@ -35,7 +36,9 @@ function adicionarLinha(){
             linha +=  `<td>(${inputDdd.value})${inputTelefone.value}</td>`;
             linha +=  `</tr>`;
         
+
             linhas.push(linha);
+
 
             // Incrementando o contador de contatos
             atualizaContador();
@@ -73,6 +76,7 @@ function atualizaContador(){
 //Excluir contatos selecionados no checkbox
 document.getElementById('excluir-contatos').addEventListener('click', function() {
 
+
     const checkboxes = document.querySelectorAll('tbody tr input[type="checkbox"]:checked');
 
     checkboxes.forEach(function (checkbox) {
@@ -105,3 +109,4 @@ document.getElementById('excluir-contatos').addEventListener('click', function()
 function removerLinha(nome, ddd, telefone) {
     linhas = linhas.filter(item => !item.includes(nome) || !item.includes(ddd) || !item.includes(telefone));
 }
+
