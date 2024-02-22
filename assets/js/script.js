@@ -3,7 +3,8 @@ const nomes = [];
 const ddd = [];
 const telefones = [];
 
-let linhas = '';
+let linhas = [];
+
 
 
 form.addEventListener('submit', function(e){
@@ -35,7 +36,9 @@ function adicionarLinha(){
             linha +=  `<td>(${inputDdd.value})${inputTelefone.value}</td>`;
             linha +=  `</tr>`;
         
-            linhas += linha;
+
+            linhas.push(linha);
+
 
             // Incrementando o contador de contatos
             atualizaContador();
@@ -72,13 +75,38 @@ function atualizaContador(){
 
 //Excluir contatos selecionados no checkbox
 document.getElementById('excluir-contatos').addEventListener('click', function() {
-    const checkboxes = document.querySelectorAll('tbody input[type="checkbox"]:checked');
-    checkboxes.forEach(function(checkbox) {
-        const index = Array.from(checkbox.closest('tr').parentNode.children).indexOf(checkbox.closest('tr')) - 1;
+
+
+    const checkboxes = document.querySelectorAll('tbody tr input[type="checkbox"]:checked');
+
+    checkboxes.forEach(function (checkbox) {
+        const tr = checkbox.closest('tr');
+        const index = Array.from(tr.parentNode.children).indexOf(tr);
+
+        // Obter valores dos campos antes de remover
+        const nomeRemovido = nomes[index];
+        const dddRemovido = ddd[index];
+        const telefoneRemovido = telefones[index];
+
+
+        // Remover elementos dos arrays
         nomes.splice(index, 1);
         ddd.splice(index, 1);
         telefones.splice(index, 1);
+
+        // Agora você pode usar nomeRemovido, dddRemovido e telefoneRemovido conforme necessário
+        console.log('Nome Removido:', nomeRemovido);
+        console.log('DDD Removido:', dddRemovido);
+        console.log('Telefone Removido:', telefoneRemovido);
+
+        removerLinha(nomeRemovido, dddRemovido, telefoneRemovido);
+
     });
     atualizaTabela();
     atualizaContador();
 });
+
+function removerLinha(nome, ddd, telefone) {
+    linhas = linhas.filter(item => !item.includes(nome) || !item.includes(ddd) || !item.includes(telefone));
+}
+
